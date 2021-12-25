@@ -26,9 +26,7 @@ export default function Home({ exploreData, cardData }) {
           <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
 
             {exploreData?.map(({ img, distance, location }) => (
-              <SmallCard
-                key={img}
-                img={img}
+              <SmallCard key={img} img={img}
                 distance={distance}
                 location={location}
               />
@@ -38,13 +36,10 @@ export default function Home({ exploreData, cardData }) {
         <section>
           <h2 className="text-4xl font-semibold py-8">live Anywhere</h2>
 
-          <div className='flex space-x-3 overflow-scroll scrollbar-hide p-3 -ml-3'>
+          <div className="flex space-x-3 overflow-scroll
+           scrollbar-hide p-3 -ml-3">
             {cardData?.map(({ img, title }) => (
-              <MediumCard
-                key={img}
-                img={img}
-                title={title}
-              />
+              <MediumCard key={img} img={img} title={title} />
             ))}
           </div>
 
@@ -55,9 +50,10 @@ export default function Home({ exploreData, cardData }) {
           descrisption="Wishlists curated by Airbnb."
           buttonText="Get Inspered"
         />
-      </main>
 
+      </main>
       <Footer />
+
     </div>
   )
 }
