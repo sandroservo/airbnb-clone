@@ -37,13 +37,14 @@ export default function Home({ exploreData, cardData }) {
           <h2 className="text-4xl font-semibold py-8">live Anywhere</h2>
 
           <div className="flex space-x-3 overflow-scroll
-           scrollbar-hide p-3 -ml-3">
+           scrollbar-hide  p-3 -ml-3">
             {cardData?.map(({ img, title }) => (
               <MediumCard key={img} img={img} title={title} />
             ))}
           </div>
 
         </section>
+
         <LargeCard
           img="https://links.papareact.com/4cj"
           title="The Greatest Outdoors"
@@ -55,7 +56,7 @@ export default function Home({ exploreData, cardData }) {
       <Footer />
 
     </div>
-  )
+  );
 }
 
 export async function getStaticProps() {
