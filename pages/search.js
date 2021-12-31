@@ -2,6 +2,7 @@ import { useRouter } from "next/dist/client/router";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import InforCard from "../components/InforCard";
+import Map from "../components/Map";
 import { compareAsc, format } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR'
 
@@ -46,20 +47,23 @@ const search = ({ searchResults }) => {
             {searchResults.map(
               ({ img, location, title, description, star, price,
                 total }) => (
-              <InforCard
-                key={img}
-                img={img}
-                location={location}
-                title={title}
-                description={description}
-                star={star}
-                price={price}
-                total={total}
-              />
+                <InforCard
+                  key={img}
+                  img={img}
+                  location={location}
+                  title={title}
+                  description={description}
+                  star={star}
+                  price={price}
+                  total={total}
+                />
               )
             )}
           </div>
 
+        </section>
+        <section className='hidden xl:inline-flex xl:min-w-[600px]'>
+          <Map searchResults={searchResults} />
         </section>
 
       </main>
